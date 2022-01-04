@@ -1,0 +1,241 @@
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+.app-container {
+  width: 100%;
+}
+
+.app-container .software-subscriptions-container {
+  margin: 0 5px;
+}
+
+.app-container .software-subscriptions-container .title-element {
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.app-container .software-subscriptions-container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+.app-container .software-subscriptions-container .header .menu {
+  -webkit-transform: translate(-2px, 3px);
+          transform: translate(-2px, 3px);
+}
+
+.app-container .software-subscriptions-container .header .title {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.app-container .software-subscriptions-container .header .options {
+  width: 35px;
+  height: 25px;
+  line-height: 15px;
+  text-align: center;
+  border: 1px solid #000000;
+}
+
+.app-container .software-subscriptions-container .bottom-line {
+  border-bottom: 1px solid #99999970;
+  padding: 10px 0;
+}
+
+.app-container .software-subscriptions-container .sub-title {
+  font-size: 0.8em;
+  padding: 3px 0;
+  color: #868686;
+}
+
+.app-container .software-subscriptions-container span.note {
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #008d4220;
+  margin: 0 10px;
+}
+
+.app-container .software-subscriptions-container .text-left {
+  text-align: left;
+}
+
+.app-container .software-subscriptions-container .text-right {
+  text-align: right;
+}
+
+.app-container .software-subscriptions-container .value-text {
+  font-weight: 600;
+  font-size: 18px;
+  color: #13523a;
+}
+
+.app-container .software-subscriptions-container .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-container .software-subscriptions-container .left * {
+  padding: 5px;
+}
+
+.app-container .software-subscriptions-container .left .image img {
+  border-radius: 50%;
+}
+
+.app-container .software-subscriptions-container .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-container .software-subscriptions-container .right * {
+  padding: 5px;
+}
+
+.app-container .software-subscriptions-container .card-info .card-info-element {
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.app-container .software-subscriptions-container .card-info .card-info-element .card-info-content {
+  padding: 3px 0;
+}
+
+.app-container .software-subscriptions-container .transaction-container {
+  padding: 10px 0;
+}
+
+.app-container .software-subscriptions-container .transaction-container .daily-transaction-limit .transaction-limit-progress progress {
+  margin: 10px 0;
+  height: 10px;
+  width: 100%;
+  border-radius: 0;
+}
+
+.app-container .software-subscriptions-container .transaction-container .daily-transaction-limit .transaction-limit-progress progress::-webkit-progress-value {
+  background: #13523a;
+}
+
+.app-container .software-subscriptions-container .transaction-container .daily-transaction-limit .transaction-limit-progress progress::-webkit-progress-bar {
+  background: #99999970;
+}
+
+.app-container .software-subscriptions-container .transaction-container .daily-transaction-limit .spending-money {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-bottom: 15px;
+}
+
+.app-container .software-subscriptions-container .transaction-container .daily-transaction-limit .spending-money .spending-value {
+  width: 50%;
+  color: #13523a;
+  font-weight: 500;
+}
+
+.app-container .software-subscriptions-container .transaction-container .estimated-amount {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #008d4220;
+}
+
+.app-container .software-subscriptions-container .transaction-container .estimated-amount .estimated-amount-element {
+  width: 35%;
+}
+
+.app-container .software-subscriptions-container .issued-access .title-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-container .software-subscriptions-container .issued-access .human {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.app-container .software-subscriptions-container .recent-transactions {
+  padding: 10px 0;
+}
+
+.app-container .software-subscriptions-container .recent-transactions .transaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.app-container .software-subscriptions-container .recent-transactions .transaction .interval {
+  background-color: #008d4220;
+  padding: 5px;
+}
+/*# sourceMappingURL=style.css.map */
