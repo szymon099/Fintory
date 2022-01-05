@@ -11,7 +11,7 @@ html {
 .app-container {
   width: 100%;
   .software-subscriptions-container {
-    margin: 0 5px;
+    margin: 0 15px;
     .title-element {
       font-weight: 600;
       font-size: 18px;
@@ -157,9 +157,11 @@ html {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        .interval {
-          background-color: $bg-ltgreen;
-          padding: 5px;
+        .right {
+          .value {
+            font-weight: 700;
+            font-size: 18px;
+          }
         }
       }
     }

@@ -1,0 +1,98 @@
+html {
+  font-family: "Open Sans", sans-serif; }
+  html * {
+    margin: 0;
+    padding: 0; }
+
+.software-subscriptions {
+  margin: 10px; }
+
+.green-font {
+  color: #13523a; }
+
+span.note {
+  display: inline-block;
+  padding: 3px 7px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #008d4220;
+  margin: 0 10px;
+  font-weight: normal; }
+
+.header {
+  width: 100%;
+  height: 25px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+  .header__menu {
+    transform: translate(-2px, 3px); }
+  .header__title {
+    font-weight: 700;
+    font-size: 20px; }
+  .header__options {
+    width: 35px;
+    height: 25px;
+    line-height: 15px;
+    text-align: center;
+    border: 1px solid #000000; }
+
+.section {
+  padding: 15px 0;
+  border-bottom: 1px solid gray; }
+  .section__subtitle {
+    font-size: 0.8em;
+    color: #868686; }
+  .section__title {
+    font-weight: 700;
+    font-size: 18px;
+    padding-bottom: 15px; }
+  .section__double-columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center; }
+    .section__double-columns__element {
+      display: flex;
+      width: 50%;
+      align-items: center; }
+      .section__double-columns__element * {
+        padding: 5px; }
+  .section--text-left {
+    text-align: left; }
+  .section--text-right {
+    text-align: right; }
+  .section--flex-right {
+    justify-content: flex-end; }
+
+.card-info {
+  font-size: 16px; }
+  .card-info__content {
+    padding-bottom: 15px; }
+    .card-info__content__icon {
+      padding: 0 5px;
+      transform: translate(-2px, 3px); }
+
+.spending-limits progress {
+  margin: 10px 0;
+  height: 10px;
+  width: 100%;
+  border-radius: 0; }
+
+.spending-limits progress::-webkit-progress-value {
+  background: #13523a; }
+
+.spending-limits progress::-webkit-progress-bar {
+  background: #99999970; }
+
+.spending-limits .estimated-amount {
+  padding: 15px;
+  margin: 15px 0;
+  background: #008d4220; }
+
+.issued-access img {
+  border-radius: 50%; }
