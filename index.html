@@ -9,150 +9,189 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="app-container">
-        <div class="software-subscriptions-container">
-            <div class="header">
-                <div class="menu">
+    <div class="app">
+        <div class="software-subscriptions">
+            <header class="header">
+                <div class="header__menu">
                     <img src="icon/menu.svg" alt="menu">
                 </div>
-                <div class="title">
+                <div class="header__square">
+                    <div class="sm-square"></div>
+                </div>
+                <div class="header__title">
                     Software subscriptions
                 </div>
-                <div class="options">
-                    ...
+                <div class="header__options">
+                    <span class="manage">
+                        Manage
+                    </span>
+                    <img src="icon/more-horizontal.svg" alt="">
                 </div>
-            </div>
-            <div class="card-info bottom-line">
-                <div class="card-number card-info-element">
-                    <div class="sub-title">CARD NUMBER</div>
-                    <div class="card-info-content">
+            </header>
+            <div class="section section--flex-row">
+                <div class="card-info card-info--border-right">
+                    <div class="section__subtitle">
+                        CARD NUMBER
+                    </div>
+                    <div class="card-info__content">
                         5540 2280 8647 5687
-                        <img class="icon" src="icon/copy.svg" alt="copy button">
+                        <img class="card-info__content__icon" src="icon/copy.svg" alt="copy button">
                     </div>
                 </div>
-                <div class="expire-date card-info-element">
-                    <div class="sub-title">EXPIRE DATE</div>
-                    <div class="card-info-content">08/28</div>
+                <div class="card-info card-info--border-right">
+                    <div class="section__subtitle">
+                        EXPIRE DATE
+                    </div>
+                    <div class="card-info__content">
+                        08/28
+                    </div>
                 </div>
-                <div class="cvc card-info-element">
-                    <div class="sub-title">CVC</div>
-                    <div class="card-info-content">
+                <div class="card-info">
+                    <div class="section__subtitle">
+                        CVC
+                    </div>
+                    <div class="card-info__content">
                         ***
-                        <img class="icon" src="icon/eye.svg" alt="visibily button">
+                        <img class="card-info__content__icon" src="icon/eye.svg" alt="visibily button">
                     </div>
                 </div>
             </div>
-            <div class="spending-limits bottom-line">
-                <div class="title-element">
-                    Spending limits
-                </div>
-                <div class="transaction-container">
-                    <div class="daily-transaction-limit">
-                        <div class="transaction-limit-title sub-title">
+            <div class="section spending-limits">
+                <div class="section__title">Spending limits</div>
+                <div class="transaction-container section--flex-row">
+                    <div class="transaction-limit">
+                        <div class="section__subtitle">
                             DAILY TRANSACTION LIMIT
                         </div>
                         <div class="transaction-limit-progress">
                             <progress value="10" max="100"></progress>
                         </div>
-                        <div class="spending-money">
-                            <div class="spending-value text-left">
+                        <div class="section__double-columns green-font">
+                            <div class="section--text-left">
                                 $199.00 spent of $2,000.00
                             </div>
-                            <div class="spending-value text-right">
+                            <div class="section--text-right">
                                 10%
                             </div>
                         </div>
                     </div>
                     <div class="estimated-amount">
-                        <div class="estimated-amount-element text-left">
-                            Estimated amount for this month:
+                        <div class="section__double-columns estimated-tablet">
+                            <div class="section--text-left section__double-columns__element">
+                                Estimated amount for this month:
+                            </div>
+                            <div class="section--text-right green-font bold">
+                                $2,920.00
+                            </div>
                         </div>
-                        <div class="estimated-amount-element text-right value-text">
-                            $2,920.00
-                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="section issued-access">
+                <div class="section__title">
+                    Issued access
+                    <span class="note">2</span>
+                </div>
+                <div class="section__double-columns pad-y-10">
+                    <div class="section__double-columns__element">
+                        <img class="circle" src="https://picsum.photos/50" alt="">
+                        Ellen Wilson
+                    </div>
+                    <div class="section__double-columns__element section--flex-right">
+                        $1,649.00 / year
+                        <img src="icon/chevron-right.svg" alt="">
+                    </div>
+                </div>
+                <div class="section__double-columns pad-y-10">
+                    <div class="section__double-columns__element">
+                        <img class="circle" src="https://picsum.photos/50" alt="">
+                        Margo Madison
+                    </div>
+                    <div class="section__double-columns__element section--flex-right">
+                        $59.00 / month
+                        <img src="icon/chevron-right.svg" alt="">
                     </div>
                 </div>
             </div>
-            <div class="issued-access bottom-line">
-                <div class="title-element">
-                    Isssued access
-                    <span class='note'>
-                        2
-                    </span>
-                </div>
-                <div class="access-human">
-                    <div class="human">
-                        <div class="left">
-                            <div class="image">
-                                <img src="https://picsum.photos/50" alt="profile image">
-                            </div>
-                            <div class="name">Ellen Wilson</div>
-                        </div>
-                        <div class="right">
-                            <div class="value">$1,649.00 / year</div>
-                                <img src="icon/chevron-right.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="human">
-                        <div class="left">
-                            <div class="image">
-                                <img src="https://picsum.photos/50" alt="profile image">
-                            </div>
-                            <div class="name">Margo Madison</div>
-                        </div>
-                        <div class="right">
-                            <div class="value">$59.00 / month</div>
-                                <img src="icon/chevron-right.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="recent-transactions">
-                <div class="title-element">
+            <div class="section section--border-none recent-transactions">
+                <div class="section__title">
                     Recent transactions
                 </div>
-                <div class="transaction">
-                    <div class="left">
-                        <div class="image">
-                            <img src="https://picsum.photos/50" alt="">
-                        </div>
-                        <div class="date sub-title">
+                <div class="section__double-columns pad-y-10">
+                    <div class="section__double-columns__element">
+                        <img class="circle" src="https://picsum.photos/50" alt="">
+                        <div class="section__subtitle">
                             Dec 20, 2021
                         </div>
                         <span class="note">
                             monthly
                         </span>
                     </div>
-                    <div class="right">
-                        <div class="value">
-                            -$299.00
-                        </div>
-                            <img src="icon/chevron-right.svg" alt="">
+                    <div class="section__double-columns__element section--flex-right bold">
+                        -$299.00
+                        <img src="icon/chevron-right.svg" alt="">
                     </div>
                 </div>
-                <div class="transaction">
-                    <div class="left">
-                        <div class="image">
-                            <img src="https://picsum.photos/50" alt="">
-                        </div>
-                        <div class="date sub-title">
+                <div class="section__double-columns pad-y-10">
+                    <div class="section__double-columns__element">
+                        <img class="circle" src="https://picsum.photos/50" alt="">
+                        <div class="section__subtitle">
                             Dec 19, 2021
                         </div>
                         <span class="note">
                             annual
                         </span>
                     </div>
-                    <div class="right">
-                        <div class="value">
-                            -$1490.00
-                        </div>
-                            <img src="icon/chevron-right.svg" alt="">
+                    <div class="section__double-columns__element section--flex-right bold">
+                        -$1499.00
+                        <img src="icon/chevron-right.svg" alt="">
                     </div>
                 </div>
             </div>
         </div>
+        <div class="menu-bar">
+            <div class="menu-bar__menu-up">
+                <div class="logo">
+                    <div class="image">
+                    <img src="https://picsum.photos/50" alt="logo">
+                    </div>
+                </div>
+                <div class="main-menu">
+                    <div class="icon-menu">
+                        <img src="icon/home.svg" alt="home">
+                    </div>
+                    <div class="icon-menu">
+                        <img src="icon/layers.svg" alt="accounts">
+                    </div>
+                    <div class="icon-menu">
+                        <img src="icon/credit-card.svg" alt="cards">
+                    </div>
+                    <div class="icon-menu">
+                        <img src="icon/triangle.svg" alt="payments">
+                    </div>
+                    <div class="icon-menu">
+                        <img src="icon/star.svg" alt="team">
+                    </div>
+                    <div class="icon-menu">
+                        <img src="icon/octagon.svg" alt="Settings">
+                    </div>
+                </div>
+            </div>
+            <div class="menu-bar__menu-down">
+                <div class="menu">
+                    <div class="icon-menu">
+                        <img src="icon/message-square.svg" alt="help">
+                    </div>
+                    <div class="icon-menu">
+                        <img src="icon/log-out.svg" alt="log out">
+                    </div>
+                </div>
+                <div class="profile">
+                    <img src="https://picsum.photos/50" alt="profile image">
+                </div>
+            </div>
+        </div>
     </div>
-    
-
 </body>
 </html>
