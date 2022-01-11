@@ -8,6 +8,9 @@ html {
   display: flex;
   flex-direction: row; }
 
+.desktop {
+  display: none; }
+
 .software-subscriptions {
   width: 100%;
   margin: 10px;
@@ -16,6 +19,10 @@ html {
 .menu-bar {
   display: none;
   order: 1; }
+
+.card-list {
+  display: none;
+  order: 2; }
 
 .green-font {
   color: #0a150f; }
@@ -55,8 +62,8 @@ span.manage {
   .header__title {
     font-weight: 700;
     font-size: 19px;
-    width: 100%;
-    text-align: center; }
+    text-align: center;
+    width: 80%; }
   .header__options {
     display: flex;
     align-items: center;
@@ -66,7 +73,7 @@ span.manage {
 
 .section {
   padding: 15px 0;
-  border-bottom: 1px solid gray; }
+  border-bottom: 1px solid #99999970; }
   .section__subtitle {
     font-size: 0.8em;
     color: #868686; }
@@ -98,7 +105,7 @@ span.manage {
 .card-info {
   font-size: 16px; }
   .card-info__content {
-    padding-bottom: 15px; }
+    line-height: 50px; }
     .card-info__content__icon {
       padding: 0 5px;
       transform: translate(-2px, 3px); }
@@ -155,7 +162,208 @@ span.manage {
   .app .software-subscriptions {
     padding-top: 30px; }
   .app .header__menu {
-    display: none; }
+    display: none;
+    width: 40px; }
+  .app .header__title {
+    width: auto; }
+  .app .header__square {
+    width: 40px;
+    height: 34px;
+    background-color: #97f675;
+    position: relative; }
+    .app .header__square .sm-square {
+      width: 15px;
+      height: 12px;
+      background-color: #0a150f;
+      z-index: 1;
+      position: absolute;
+      top: 17px;
+      left: 20px;
+      transform: translate(-50%, -50%); }
+  .app .header__title {
+    font-size: 24px; }
+  .app .header__options {
+    padding: 5px 10px; }
+  .app .section--flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+  .app span.manage {
+    display: inline-block;
+    font-size: 15px;
+    margin-right: 10px; }
+  .app .card-info {
+    margin-top: 30px; }
+    .app .card-info:nth-of-type(1) {
+      width: 45%;
+      margin-right: 3%; }
+    .app .card-info:nth-of-type(2) {
+      width: 20%;
+      margin-right: 3%; }
+    .app .card-info:nth-of-type(3) {
+      width: 35%; }
+    .app .card-info--border-right {
+      border-right: 1px solid #99999970; }
+  .app .transaction-container .transaction-limit {
+    width: 60%; }
+  .app .transaction-container .estimated-amount {
+    width: 30%; }
+    .app .transaction-container .estimated-amount .estimated-tablet {
+      flex-direction: column; } }
+
+@media (min-width: 1025px) {
+  .desktop {
+    display: block;
+    color: #ffffff; }
+  .app .card-list {
+    background-color: #f8faf7;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border-right: 1px solid #99999970; }
+    .app .card-list .header {
+      justify-content: space-around;
+      padding: 40px 0;
+      border-bottom: 1px solid #99999970; }
+    .app .card-list .card-tab {
+      padding: 15px 0 15px 30px;
+      border-bottom: 1px solid #99999970;
+      position: relative; }
+      .app .card-list .card-tab--active {
+        background-color: #1f332b;
+        color: #ffffff; }
+      .app .card-list .card-tab--disable {
+        margin-top: 20px;
+        border-top: 1px solid #99999970;
+        color: #00000060; }
+      .app .card-list .card-tab__title {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 4px 0; }
+      .app .card-list .card-tab__status {
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        padding: 4px 0; }
+        .app .card-list .card-tab__status .dot {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: #000000;
+          border: 1px solid #000000;
+          margin-right: 7px; }
+          .app .card-list .card-tab__status .dot--active {
+            background-color: #ffffff;
+            border: 1px solid #ffffff; }
+          .app .card-list .card-tab__status .dot--disable {
+            background-color: #00000060;
+            border: 1px solid #00000060; }
+      .app .card-list .card-tab__access {
+        font-size: 12px;
+        padding: 4px 0;
+        color: #868686; }
+        .app .card-list .card-tab__access span.note {
+          font-weight: 600;
+          color: #000000; }
+          .app .card-list .card-tab__access span.note--active {
+            background-color: #2f433b;
+            color: #ffffff; }
+          .app .card-list .card-tab__access span.note--disable {
+            color: #00000060; }
+      .app .card-list .card-tab__card-pic {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 25%;
+        height: 80%;
+        background: #ffffff;
+        border: solid #99999970;
+        border-width: 1px 0 0 1px;
+        border-radius: 10px 0 0 0; }
+        .app .card-list .card-tab__card-pic--active {
+          width: 28%;
+          background: linear-gradient(128deg, #2a473b 0%, #3f5d51 50%, #2a473b 100%); }
+        .app .card-list .card-tab__card-pic .strip {
+          position: absolute;
+          top: 20px;
+          width: 100%;
+          height: 20px;
+          background-color: #f8faf7; }
+          .app .card-list .card-tab__card-pic .strip--active {
+            background-color: #5c756a; }
+        .app .card-list .card-tab__card-pic .card-pic__card-number {
+          position: absolute;
+          top: 50px;
+          left: 10px; }
+          .app .card-list .card-tab__card-pic .card-pic__card-number .master-card {
+            display: inline-block;
+            width: 30px;
+            height: 15px;
+            position: relative; }
+            .app .card-list .card-tab__card-pic .card-pic__card-number .master-card .circle {
+              position: absolute;
+              top: 1px;
+              bottom: 0;
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              background-color: #ffffff; }
+              .app .card-list .card-tab__card-pic .card-pic__card-number .master-card .circle--second {
+                left: 10px; }
+  .app .menu-bar {
+    padding-top: 30px;
+    order: 1;
+    width: 20%;
+    max-width: 250px;
+    background-color: #0a150f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
+    .app .menu-bar .desktop {
+      margin-left: 15px; }
+    .app .menu-bar .icon-menu {
+      display: flex;
+      flex-direction: row;
+      width: 150px;
+      margin: 10px 0;
+      padding: 10px 20px; }
+    .app .menu-bar .icon-menu:hover {
+      background-color: #97f675; }
+    .app .menu-bar__menu-up {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .app .menu-bar__menu-up .logo {
+        padding: 15px 0;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+    .app .menu-bar__menu-down {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .app .menu-bar__menu-down .menu {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #99999970; }
+      .app .menu-bar__menu-down .profile {
+        padding: 30px 0; }
+        .app .menu-bar__menu-down .profile img {
+          border-radius: 50%; }
+  .app .software-subscriptions {
+    padding-top: 30px;
+    width: 50%; }
+  .app .header__icon * {
+    margin: 0 10px; }
+  .app .header__menu {
+    display: none;
+    width: 40px; }
+  .app .header__title {
+    width: auto; }
   .app .header__square {
     width: 40px;
     height: 34px;

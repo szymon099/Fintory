@@ -4,6 +4,18 @@ $ltgray-line: #99999970;
 $green: #0a150f;
 $ltgreen: #97f675;
 $bg-ltgreen: #f8faf7;
+$white: #ffffff;
+$card-list-bg: #f8faf7;
+$card-active-bg: #1f332b;
+$strip-acive: #5c756a;
+$note-active: #2f433b;
+$card-active: linear-gradient(
+  128deg,
+  rgba(42, 71, 59, 1) 0%,
+  rgba(63, 93, 81, 1) 50%,
+  rgba(42, 71, 59, 1) 100%
+);
+$disable-text: #00000060;
 
 html {
   font-family: "Open Sans", sans-serif;
@@ -19,6 +31,10 @@ html {
   flex-direction: row;
 }
 
+.desktop {
+  display: none;
+}
+
 .software-subscriptions {
   width: 100%;
   margin: 10px;
@@ -28,6 +44,11 @@ html {
 .menu-bar {
   display: none;
   order: 1;
+}
+
+.card-list {
+  display: none;
+  order: 2;
 }
 
 .green-font {
@@ -77,8 +98,8 @@ span.manage {
   &__title {
     font-weight: 700;
     font-size: 19px;
-    width: 100%;
     text-align: center;
+    width: 80%;
   }
 
   &__options {
@@ -92,7 +113,7 @@ span.manage {
 
 .section {
   padding: 15px 0;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid $ltgray-line;
 
   &__subtitle {
     font-size: 0.8em;
@@ -144,7 +165,7 @@ span.manage {
   font-size: 16px;
 
   &__content {
-    padding-bottom: 15px;
+    line-height: 50px;
 
     &__icon {
       padding: 0 5px;
@@ -232,6 +253,312 @@ span.manage {
     .header {
       &__menu {
         display: none;
+        width: 40px;
+      }
+      &__title {
+        width: auto;
+      }
+
+      &__square {
+        width: 40px;
+        height: 34px;
+        background-color: $ltgreen;
+        position: relative;
+        .sm-square {
+          width: 15px;
+          height: 12px;
+          background-color: $green;
+          z-index: 1;
+          position: absolute;
+          top: 17px;
+          left: 20px;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &__title {
+        font-size: 24px;
+      }
+
+      &__options {
+        padding: 5px 10px;
+      }
+    }
+
+    .section {
+      &--flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    span.manage {
+      display: inline-block;
+      font-size: 15px;
+      margin-right: 10px;
+    }
+
+    .card-info {
+      margin-top: 30px;
+      &:nth-of-type(1) {
+        width: 45%;
+        margin-right: 3%;
+      }
+      &:nth-of-type(2) {
+        width: 20%;
+        margin-right: 3%;
+      }
+      &:nth-of-type(3) {
+        width: 35%;
+      }
+
+      &--border-right {
+        border-right: 1px solid $ltgray-line;
+      }
+    }
+
+    .transaction-container {
+      .transaction-limit {
+        width: 60%;
+      }
+
+      .estimated-amount {
+        width: 30%;
+        .estimated-tablet {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .desktop {
+    display: block;
+    color: $white;
+  }
+
+  .app {
+    .card-list {
+      background-color: $card-list-bg;
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      border-right: 1px solid $ltgray-line;
+
+      .header {
+        justify-content: space-around;
+        padding: 40px 0;
+        border-bottom: 1px solid $ltgray-line;
+      }
+
+      .card-tab {
+        padding: 15px 0 15px 30px;
+        border-bottom: 1px solid $ltgray-line;
+        position: relative;
+
+        &--active {
+          background-color: $card-active-bg;
+          color: $white;
+        }
+
+        &--disable {
+          margin-top: 20px;
+          border-top: 1px solid $ltgray-line;
+          color: $disable-text;
+        }
+
+        &__title {
+          font-size: 16px;
+          font-weight: 600;
+          padding: 4px 0;
+        }
+
+        &__status {
+          display: flex;
+          align-items: center;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          padding: 4px 0;
+
+          .dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: $black;
+            border: 1px solid $black;
+            margin-right: 7px;
+
+            &--active {
+              background-color: $white;
+              border: 1px solid $white;
+            }
+
+            &--disable {
+              background-color: $disable-text;
+              border: 1px solid $disable-text;
+            }
+          }
+        }
+
+        &__access {
+          font-size: 12px;
+          padding: 4px 0;
+          color: $ltgray-text;
+
+          span.note {
+            font-weight: 600;
+            color: $black;
+
+            &--active {
+              background-color: $note-active;
+              color: $white;
+            }
+
+            &--disable {
+              color: $disable-text;
+            }
+          }
+        }
+
+        &__card-pic {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 25%;
+          height: 80%;
+          background: $white;
+          border: solid $ltgray-line;
+          border-width: 1px 0 0 1px;
+          border-radius: 10px 0 0 0;
+
+          &--active {
+            width: 28%;
+            background: $card-active;
+          }
+
+          .strip {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            height: 20px;
+            background-color: $card-list-bg;
+
+            &--active {
+              background-color: $strip-acive;
+            }
+          }
+
+          .card-pic__card-number {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+
+            .master-card {
+              display: inline-block;
+              width: 30px;
+              height: 15px;
+              position: relative;
+
+              .circle {
+                position: absolute;
+                top: 1px;
+                bottom: 0;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: $white;
+
+                &--second {
+                  left: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .menu-bar {
+      padding-top: 30px;
+      order: 1;
+      width: 20%;
+      max-width: 250px;
+      background-color: $green;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      .desktop {
+        margin-left: 15px;
+      }
+
+      .icon-menu {
+        display: flex;
+        flex-direction: row;
+        width: 150px;
+        margin: 10px 0;
+        padding: 10px 20px;
+      }
+
+      .icon-menu:hover {
+        background-color: $ltgreen;
+      }
+
+      &__menu-up {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo {
+          padding: 15px 0;
+          font-size: 20px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+
+      &__menu-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .menu {
+          padding-bottom: 10px;
+          border-bottom: 1px solid $ltgray-line;
+        }
+
+        .profile {
+          padding: 30px 0;
+          img {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+
+    .software-subscriptions {
+      padding-top: 30px;
+      width: 50%;
+    }
+
+    .header {
+      &__icon {
+        * {
+          margin: 0 10px;
+        }
+      }
+
+      &__menu {
+        display: none;
+        width: 40px;
+      }
+
+      &__title {
+        width: auto;
       }
 
       &__square {
