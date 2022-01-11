@@ -25,7 +25,7 @@ html {
   order: 2; }
 
 .green-font {
-  color: #0a150f; }
+  color: #284e3f; }
 
 .bold {
   font-weight: 700; }
@@ -140,6 +140,8 @@ span.manage {
     .app .menu-bar .icon-menu {
       margin: 10px 0;
       padding: 10px 20px; }
+      .app .menu-bar .icon-menu__active {
+        background-color: #97f675; }
     .app .menu-bar .icon-menu:hover {
       background-color: #97f675; }
     .app .menu-bar__menu-up {
@@ -157,6 +159,8 @@ span.manage {
         border-bottom: 1px solid #99999970; }
       .app .menu-bar__menu-down .profile {
         padding: 30px 0; }
+        .app .menu-bar__menu-down .profile__description {
+          display: none; }
         .app .menu-bar__menu-down .profile img {
           border-radius: 50%; }
   .app .software-subscriptions {
@@ -189,6 +193,8 @@ span.manage {
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
+  .app .section__double-columns__element {
+    width: 100%; }
   .app span.manage {
     display: inline-block;
     font-size: 15px;
@@ -199,10 +205,12 @@ span.manage {
       width: 45%;
       margin-right: 3%; }
     .app .card-info:nth-of-type(2) {
-      width: 20%;
+      width: 25%;
       margin-right: 3%; }
     .app .card-info:nth-of-type(3) {
-      width: 35%; }
+      width: 30%; }
+    .app .card-info:nth-of-type(4) {
+      display: none; }
     .app .card-info--border-right {
       border-right: 1px solid #99999970; }
   .app .transaction-container .transaction-limit {
@@ -328,9 +336,13 @@ span.manage {
     .app .menu-bar .icon-menu {
       display: flex;
       flex-direction: row;
-      width: 150px;
+      width: 140px;
       margin: 10px 0;
       padding: 10px 20px; }
+      .app .menu-bar .icon-menu__active {
+        background-color: #97f675; }
+        .app .menu-bar .icon-menu__active .desktop {
+          color: #1f332b; }
     .app .menu-bar .icon-menu:hover {
       background-color: #97f675; }
     .app .menu-bar__menu-up {
@@ -350,10 +362,27 @@ span.manage {
       .app .menu-bar__menu-down .menu {
         padding-bottom: 10px;
         border-bottom: 1px solid #99999970; }
+        .app .menu-bar__menu-down .menu .desktop {
+          color: #b5b9b7; }
       .app .menu-bar__menu-down .profile {
-        padding: 30px 0; }
+        padding: 30px 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
         .app .menu-bar__menu-down .profile img {
           border-radius: 50%; }
+        .app .menu-bar__menu-down .profile__description {
+          width: 100px;
+          height: 100%;
+          color: #ffffff;
+          margin-left: 10px; }
+          .app .menu-bar__menu-down .profile__description .name {
+            font-size: 13px;
+            line-height: 25px; }
+          .app .menu-bar__menu-down .profile__description .e-mail {
+            font-size: 10px;
+            color: #868686;
+            line-height: 25px; }
   .app .software-subscriptions {
     padding-top: 30px;
     width: 50%; }
@@ -387,6 +416,8 @@ span.manage {
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
+  .app .section__double-columns .software {
+    width: 20%; }
   .app span.manage {
     display: inline-block;
     font-size: 15px;
@@ -394,18 +425,42 @@ span.manage {
   .app .card-info {
     margin-top: 30px; }
     .app .card-info:nth-of-type(1) {
-      width: 45%;
+      width: 40%;
       margin-right: 3%; }
     .app .card-info:nth-of-type(2) {
       width: 20%;
       margin-right: 3%; }
     .app .card-info:nth-of-type(3) {
-      width: 35%; }
+      width: 15%; }
+    .app .card-info:nth-of-type(4) {
+      width: 15%;
+      padding-left: 3%; }
     .app .card-info--border-right {
       border-right: 1px solid #99999970; }
+    .app .card-info--border-left {
+      border-left: 1px solid #99999970; }
   .app .transaction-container .transaction-limit {
     width: 60%; }
   .app .transaction-container .estimated-amount {
-    width: 30%; }
+    width: 30%;
+    position: relative;
+    overflow: hidden; }
     .app .transaction-container .estimated-amount .estimated-tablet {
-      flex-direction: column; } }
+      flex-direction: column;
+      position: relative;
+      z-index: 2; }
+      .app .transaction-container .estimated-amount .estimated-tablet * {
+        text-align: left;
+        width: 80%; }
+    .app .transaction-container .estimated-amount .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      background-color: #eef1ed;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -35px;
+      right: -35px;
+      z-index: 1; } }

@@ -1,12 +1,19 @@
 $black: #000000;
+
 $ltgray-text: #868686;
 $ltgray-line: #99999970;
+$gray-text: #b5b9b7;
+
 $green: #0a150f;
 $ltgreen: #97f675;
 $bg-ltgreen: #f8faf7;
+$green-font: #284e3f;
+
 $white: #ffffff;
+
 $card-list-bg: #f8faf7;
 $card-active-bg: #1f332b;
+
 $strip-acive: #5c756a;
 $note-active: #2f433b;
 $card-active: linear-gradient(
@@ -15,6 +22,9 @@ $card-active: linear-gradient(
   rgba(63, 93, 81, 1) 50%,
   rgba(42, 71, 59, 1) 100%
 );
+
+$arrow-circle: #eef1ed;
+
 $disable-text: #00000060;
 
 html {
@@ -52,7 +62,7 @@ html {
 }
 
 .green-font {
-  color: $green;
+  color: $green-font;
 }
 
 .bold {
@@ -212,6 +222,10 @@ span.manage {
       .icon-menu {
         margin: 10px 0;
         padding: 10px 20px;
+
+        &__active {
+          background-color: $ltgreen;
+        }
       }
 
       .icon-menu:hover {
@@ -232,6 +246,7 @@ span.manage {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         .menu {
           padding-bottom: 10px;
           border-bottom: 1px solid $ltgray-line;
@@ -239,6 +254,11 @@ span.manage {
 
         .profile {
           padding: 30px 0;
+
+          &__description {
+            display: none;
+          }
+
           img {
             border-radius: 50%;
           }
@@ -292,6 +312,12 @@ span.manage {
         justify-content: space-between;
         align-items: center;
       }
+
+      &__double-columns {
+        &__element {
+          width: 100%;
+        }
+      }
     }
 
     span.manage {
@@ -302,16 +328,23 @@ span.manage {
 
     .card-info {
       margin-top: 30px;
+
       &:nth-of-type(1) {
         width: 45%;
         margin-right: 3%;
       }
+
       &:nth-of-type(2) {
-        width: 20%;
+        width: 25%;
         margin-right: 3%;
       }
+
       &:nth-of-type(3) {
-        width: 35%;
+        width: 30%;
+      }
+
+      &:nth-of-type(4) {
+        display: none;
       }
 
       &--border-right {
@@ -492,6 +525,7 @@ span.manage {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+
       .desktop {
         margin-left: 15px;
       }
@@ -499,9 +533,16 @@ span.manage {
       .icon-menu {
         display: flex;
         flex-direction: row;
-        width: 150px;
+        width: 140px;
         margin: 10px 0;
         padding: 10px 20px;
+
+        &__active {
+          background-color: $ltgreen;
+          .desktop {
+            color: $card-active-bg;
+          }
+        }
       }
 
       .icon-menu:hover {
@@ -526,15 +567,42 @@ span.manage {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         .menu {
           padding-bottom: 10px;
           border-bottom: 1px solid $ltgray-line;
+
+          .desktop {
+            color: $gray-text;
+          }
         }
 
         .profile {
           padding: 30px 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
           img {
             border-radius: 50%;
+          }
+
+          &__description {
+            width: 100px;
+            height: 100%;
+            color: $white;
+            margin-left: 10px;
+
+            .name {
+              font-size: 13px;
+              line-height: 25px;
+            }
+
+            .e-mail {
+              font-size: 10px;
+              color: $ltgray-text;
+              line-height: 25px;
+            }
           }
         }
       }
@@ -594,6 +662,12 @@ span.manage {
         justify-content: space-between;
         align-items: center;
       }
+
+      &__double-columns {
+        .software {
+          width: 20%;
+        }
+      }
     }
 
     span.manage {
@@ -605,7 +679,7 @@ span.manage {
     .card-info {
       margin-top: 30px;
       &:nth-of-type(1) {
-        width: 45%;
+        width: 40%;
         margin-right: 3%;
       }
       &:nth-of-type(2) {
@@ -613,11 +687,20 @@ span.manage {
         margin-right: 3%;
       }
       &:nth-of-type(3) {
-        width: 35%;
+        width: 15%;
+        // margin-right: 3%;
+      }
+      &:nth-of-type(4) {
+        width: 15%;
+        padding-left: 3%;
       }
 
       &--border-right {
         border-right: 1px solid $ltgray-line;
+      }
+
+      &--border-left {
+        border-left: 1px solid $ltgray-line;
       }
     }
 
@@ -628,8 +711,32 @@ span.manage {
 
       .estimated-amount {
         width: 30%;
+        position: relative;
+        overflow: hidden;
+
         .estimated-tablet {
           flex-direction: column;
+          position: relative;
+          z-index: 2;
+
+          * {
+            text-align: left;
+            width: 80%;
+          }
+        }
+
+        .arrow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100px;
+          height: 100px;
+          background-color: $arrow-circle;
+          border-radius: 50%;
+          position: absolute;
+          bottom: -35px;
+          right: -35px;
+          z-index: 1;
         }
       }
     }
