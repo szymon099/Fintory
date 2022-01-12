@@ -65,6 +65,10 @@ html {
   color: $green-font;
 }
 
+.black-font {
+  color: $black;
+}
+
 .bold {
   font-weight: 700;
 }
@@ -142,15 +146,16 @@ span.manage {
     width: 100%;
     justify-content: space-between;
     align-items: center;
+  }
 
-    &__element {
-      display: flex;
-      width: 50%;
-      align-items: center;
+  &__double-columns-element {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    align-items: center;
 
-      * {
-        padding: 5px;
-      }
+    * {
+      padding: 5px;
     }
   }
 
@@ -211,7 +216,6 @@ span.manage {
   .app {
     .menu-bar {
       min-height: 100vh;
-      padding-top: 30px;
       order: 1;
       width: 150px;
       background-color: $green;
@@ -237,6 +241,7 @@ span.manage {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 30px;
 
         .logo {
           padding: 15px 0;
@@ -383,9 +388,10 @@ span.manage {
       border-right: 1px solid $ltgray-line;
 
       .header {
-        justify-content: space-around;
+        justify-content: space-between;
+        margin: 0 30px;
         padding: 40px 0;
-        border-bottom: 1px solid $ltgray-line;
+        width: calc(100% - 60px);
       }
 
       .card-tab {
@@ -402,6 +408,10 @@ span.manage {
           margin-top: 20px;
           border-top: 1px solid $ltgray-line;
           color: $disable-text;
+        }
+
+        &--border-top {
+          border-top: 1px solid $ltgray-line;
         }
 
         &__title {
@@ -485,30 +495,30 @@ span.manage {
               background-color: $strip-acive;
             }
           }
+        }
 
-          .card-pic__card-number {
-            position: absolute;
-            top: 50px;
-            left: 10px;
+        &__card-number {
+          position: absolute;
+          top: 50px;
+          left: 10px;
 
-            .master-card {
-              display: inline-block;
-              width: 30px;
+          .master-card {
+            display: inline-block;
+            width: 30px;
+            height: 15px;
+            position: relative;
+
+            .circle {
+              position: absolute;
+              top: 1px;
+              bottom: 0;
+              width: 15px;
               height: 15px;
-              position: relative;
+              border-radius: 50%;
+              background-color: $white;
 
-              .circle {
-                position: absolute;
-                top: 1px;
-                bottom: 0;
-                width: 15px;
-                height: 15px;
-                border-radius: 50%;
-                background-color: $white;
-
-                &--second {
-                  left: 10px;
-                }
+              &--second {
+                left: 10px;
               }
             }
           }
@@ -518,7 +528,6 @@ span.manage {
 
     .menu-bar {
       min-height: 100vh;
-      padding-top: 30px;
       order: 1;
       width: 20%;
       max-width: 250px;
@@ -555,6 +564,7 @@ span.manage {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 30px;
 
         .logo {
           padding: 15px 0;
@@ -613,7 +623,6 @@ span.manage {
     .software-subscriptions {
       padding: 30px 10px;
       margin: 0 auto;
-      // padding-top: 30px;
       width: 50%;
     }
 
@@ -670,6 +679,7 @@ span.manage {
       &__double-columns {
         .software {
           width: 20%;
+          color: $ltgray-text;
         }
       }
     }

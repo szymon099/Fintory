@@ -27,6 +27,9 @@ html {
 .green-font {
   color: #284e3f; }
 
+.black-font {
+  color: #000000; }
+
 .bold {
   font-weight: 700; }
 
@@ -87,12 +90,13 @@ span.manage {
     width: 100%;
     justify-content: space-between;
     align-items: center; }
-    .section__double-columns__element {
-      display: flex;
-      width: 50%;
-      align-items: center; }
-      .section__double-columns__element * {
-        padding: 5px; }
+  .section__double-columns-element {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    align-items: center; }
+    .section__double-columns-element * {
+      padding: 5px; }
   .section--border-none {
     border: 0; }
   .section--text-left {
@@ -130,7 +134,6 @@ span.manage {
 @media (min-width: 768px) and (max-width: 1024px) {
   .app .menu-bar {
     min-height: 100vh;
-    padding-top: 30px;
     order: 1;
     width: 150px;
     background-color: #0a150f;
@@ -148,7 +151,8 @@ span.manage {
     .app .menu-bar__menu-up {
       display: flex;
       flex-direction: column;
-      align-items: center; }
+      align-items: center;
+      padding-top: 30px; }
       .app .menu-bar__menu-up .logo {
         padding: 15px 0; }
     .app .menu-bar__menu-down {
@@ -232,9 +236,10 @@ span.manage {
     width: 30%;
     border-right: 1px solid #99999970; }
     .app .card-list .header {
-      justify-content: space-around;
+      justify-content: space-between;
+      margin: 0 30px;
       padding: 40px 0;
-      border-bottom: 1px solid #99999970; }
+      width: calc(100% - 60px); }
     .app .card-list .card-tab {
       padding: 15px 0 15px 30px;
       border-bottom: 1px solid #99999970;
@@ -246,6 +251,8 @@ span.manage {
         margin-top: 20px;
         border-top: 1px solid #99999970;
         color: #00000060; }
+      .app .card-list .card-tab--border-top {
+        border-top: 1px solid #99999970; }
       .app .card-list .card-tab__title {
         font-size: 16px;
         font-weight: 600;
@@ -303,28 +310,27 @@ span.manage {
           background-color: #f8faf7; }
           .app .card-list .card-tab__card-pic .strip--active {
             background-color: #5c756a; }
-        .app .card-list .card-tab__card-pic .card-pic__card-number {
-          position: absolute;
-          top: 50px;
-          left: 10px; }
-          .app .card-list .card-tab__card-pic .card-pic__card-number .master-card {
-            display: inline-block;
-            width: 30px;
+      .app .card-list .card-tab__card-number {
+        position: absolute;
+        top: 50px;
+        left: 10px; }
+        .app .card-list .card-tab__card-number .master-card {
+          display: inline-block;
+          width: 30px;
+          height: 15px;
+          position: relative; }
+          .app .card-list .card-tab__card-number .master-card .circle {
+            position: absolute;
+            top: 1px;
+            bottom: 0;
+            width: 15px;
             height: 15px;
-            position: relative; }
-            .app .card-list .card-tab__card-pic .card-pic__card-number .master-card .circle {
-              position: absolute;
-              top: 1px;
-              bottom: 0;
-              width: 15px;
-              height: 15px;
-              border-radius: 50%;
-              background-color: #ffffff; }
-              .app .card-list .card-tab__card-pic .card-pic__card-number .master-card .circle--second {
-                left: 10px; }
+            border-radius: 50%;
+            background-color: #ffffff; }
+            .app .card-list .card-tab__card-number .master-card .circle--second {
+              left: 10px; }
   .app .menu-bar {
     min-height: 100vh;
-    padding-top: 30px;
     order: 1;
     width: 20%;
     max-width: 250px;
@@ -350,7 +356,8 @@ span.manage {
     .app .menu-bar__menu-up {
       display: flex;
       flex-direction: column;
-      align-items: center; }
+      align-items: center;
+      padding-top: 30px; }
       .app .menu-bar__menu-up .logo {
         padding: 15px 0;
         font-size: 20px;
@@ -420,7 +427,8 @@ span.manage {
     justify-content: space-between;
     align-items: center; }
   .app .section__double-columns .software {
-    width: 20%; }
+    width: 20%;
+    color: #868686; }
   .app span.manage {
     display: inline-block;
     font-size: 15px;
