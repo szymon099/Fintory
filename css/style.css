@@ -8,6 +8,13 @@ html {
   display: flex;
   flex-direction: row; }
 
+.main {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  order: 2; }
+
 .desktop {
   display: none; }
 
@@ -18,7 +25,8 @@ html {
 
 .menu-bar {
   display: none;
-  order: 1; }
+  order: 1;
+  position: fixed; }
 
 .card-list {
   display: none;
@@ -72,7 +80,11 @@ span.manage {
     align-items: center;
     padding: 3px 7px;
     text-align: center;
-    border: 1px solid #000000; }
+    border: 1px solid #000000;
+    cursor: pointer; }
+    .header__options:hover {
+      transition: 2s;
+      background-color: #868686; }
 
 .section {
   padding: 15px 0;
@@ -84,18 +96,20 @@ span.manage {
     font-weight: 700;
     font-size: 18px;
     padding-bottom: 15px; }
-  .section__double-columns {
+  .section__columns {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
     align-items: center; }
-  .section__double-columns-element {
+    .section__columns .desktop {
+      display: none; }
+  .section__columns-element {
     display: flex;
     flex-direction: row;
     width: 50%;
     align-items: center; }
-    .section__double-columns-element * {
+    .section__columns-element * {
       padding: 5px; }
   .section--border-none {
     border: 0; }
@@ -132,6 +146,8 @@ span.manage {
   background: #f8faf7; }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .app .main {
+    width: calc(100% - 150px); }
   .app .menu-bar {
     min-height: 100vh;
     order: 1;
@@ -174,7 +190,8 @@ span.manage {
     display: none;
     width: 40px; }
   .app .header__title {
-    width: auto; }
+    width: auto;
+    font-size: 26px; }
   .app .header__square {
     width: 40px;
     height: 34px;
@@ -189,8 +206,6 @@ span.manage {
       top: 17px;
       left: 20px;
       transform: translate(-50%, -50%); }
-  .app .header__title {
-    font-size: 24px; }
   .app .header__options {
     padding: 5px 10px; }
   .app .section--flex-row {
@@ -198,7 +213,10 @@ span.manage {
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
-  .app .section__double-columns__element {
+  .app .section .recent-transactions .section__columns-element,
+  .app .section .issued-access .section__columns-element {
+    width: 33%; }
+  .app .section__columns__element {
     width: 100%; }
   .app span.manage {
     display: inline-block;
@@ -226,14 +244,15 @@ span.manage {
       flex-direction: column; } }
 
 @media (min-width: 1025px) {
-  .desktop {
-    display: block;
-    color: #ffffff; }
+  .app .desktop {
+    display: block; }
+  .app .main {
+    width: calc(100% - 250px); }
   .app .card-list {
     background-color: #f8faf7;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
     border-right: 1px solid #99999970; }
     .app .card-list .header {
       justify-content: space-between;
@@ -249,62 +268,68 @@ span.manage {
         color: #ffffff; }
       .app .card-list .card-tab--disable {
         margin-top: 20px;
+        padding-bottom: 46px;
         border-top: 1px solid #99999970;
-        color: #00000060; }
+        color: #666e69; }
       .app .card-list .card-tab--border-top {
         border-top: 1px solid #99999970; }
       .app .card-list .card-tab__title {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 600;
         padding: 4px 0; }
       .app .card-list .card-tab__status {
         display: flex;
         align-items: center;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.1em;
         padding: 4px 0; }
         .app .card-list .card-tab__status .dot {
-          width: 4px;
-          height: 4px;
+          width: 6px;
+          height: 6px;
           border-radius: 50%;
           background-color: #000000;
           border: 1px solid #000000;
           margin-right: 7px; }
           .app .card-list .card-tab__status .dot--active {
             background-color: #ffffff;
-            border: 1px solid #ffffff; }
+            border: 2px solid #ffffff; }
           .app .card-list .card-tab__status .dot--disable {
-            background-color: #00000060;
-            border: 1px solid #00000060; }
+            background-color: #c8ccc9;
+            border: 2px solid #c8ccc9; }
       .app .card-list .card-tab__access {
-        font-size: 12px;
+        font-size: 16px;
         padding: 4px 0;
         color: #868686; }
         .app .card-list .card-tab__access span.note {
+          font-size: 16px;
           font-weight: 600;
           color: #000000; }
           .app .card-list .card-tab__access span.note--active {
             background-color: #2f433b;
             color: #ffffff; }
           .app .card-list .card-tab__access span.note--disable {
-            color: #00000060; }
+            color: #666e69; }
       .app .card-list .card-tab__card-pic {
         position: absolute;
         bottom: 0;
         right: 0;
         width: 25%;
-        height: 80%;
+        height: 65%;
         background: #ffffff;
         border: solid #99999970;
         border-width: 1px 0 0 1px;
         border-radius: 10px 0 0 0; }
         .app .card-list .card-tab__card-pic--active {
           width: 28%;
-          background: linear-gradient(128deg, #2a473b 0%, #3f5d51 50%, #2a473b 100%); }
+          border: double transparent;
+          border-width: 2px 0 0 2px;
+          background-image: linear-gradient(128deg, #2a473b 0%, #3f5d51 50%, #2a473b 100%), linear-gradient(40deg, #36594a 20%, #9eafa8 50%, #3e5d4e 80%);
+          background-origin: border-box;
+          background-clip: content-box, border-box; }
         .app .card-list .card-tab__card-pic .strip {
           position: absolute;
-          top: 20px;
+          top: 15px;
           width: 100%;
           height: 20px;
           background-color: #f8faf7; }
@@ -312,9 +337,15 @@ span.manage {
             background-color: #5c756a; }
       .app .card-list .card-tab__card-number {
         position: absolute;
-        top: 50px;
-        left: 10px; }
+        top: 40px;
+        width: 100%;
+        height: 50%;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
         .app .card-list .card-tab__card-number .master-card {
+          margin-left: 5px;
           display: inline-block;
           width: 30px;
           height: 15px;
@@ -331,14 +362,15 @@ span.manage {
               left: 10px; }
   .app .menu-bar {
     min-height: 100vh;
+    height: 650px;
     order: 1;
-    width: 20%;
-    max-width: 250px;
+    width: 250px;
     background-color: #0a150f;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    color: white; }
     .app .menu-bar .desktop {
       margin-left: 15px; }
     .app .menu-bar .icon-menu {
@@ -357,7 +389,7 @@ span.manage {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 30px; }
+      padding-top: 20px; }
       .app .menu-bar__menu-up .logo {
         padding: 15px 0;
         font-size: 20px;
@@ -394,14 +426,14 @@ span.manage {
             line-height: 25px; }
   .app .software-subscriptions {
     padding: 30px 10px;
-    margin: 0 auto;
-    width: 50%; }
+    width: 60%; }
   .app .header__icon * {
     margin: 0 10px; }
   .app .header__menu {
     display: none;
     width: 40px; }
   .app .header__title {
+    font-size: 28px;
     width: auto; }
   .app .header__square {
     width: 40px;
@@ -417,8 +449,6 @@ span.manage {
       top: 17px;
       left: 20px;
       transform: translate(-50%, -50%); }
-  .app .header__title {
-    font-size: 24px; }
   .app .header__options {
     padding: 5px 10px; }
   .app .section--flex-row {
@@ -426,9 +456,6 @@ span.manage {
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
-  .app .section__double-columns .software {
-    width: 20%;
-    color: #868686; }
   .app span.manage {
     display: inline-block;
     font-size: 15px;
@@ -437,12 +464,13 @@ span.manage {
     margin-top: 30px; }
     .app .card-info:nth-of-type(1) {
       width: 40%;
-      margin-right: 3%; }
+      margin-right: auto; }
     .app .card-info:nth-of-type(2) {
       width: 20%;
-      margin-right: 3%; }
+      margin: 30px auto 0 auto; }
     .app .card-info:nth-of-type(3) {
-      width: 15%; }
+      width: 15%;
+      margin: 30px auto 0 auto; }
     .app .card-info:nth-of-type(4) {
       width: 15%;
       padding-left: 3%; }
@@ -459,7 +487,9 @@ span.manage {
     .app .transaction-container .estimated-amount .estimated-tablet {
       flex-direction: column;
       position: relative;
-      z-index: 2; }
+      z-index: 2;
+      width: 65%;
+      left: 0; }
       .app .transaction-container .estimated-amount .estimated-tablet * {
         text-align: left;
         width: 80%; }
@@ -475,3 +505,7 @@ span.manage {
       bottom: -35px;
       right: -35px;
       z-index: 1; } }
+
+@media (min-width: 1200px) {
+  .app .card-list .card-tab__card-pic {
+    height: 80%; } }
