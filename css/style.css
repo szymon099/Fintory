@@ -9,6 +9,7 @@ html {
   flex-direction: row; }
 
 .main {
+  width: 100%;
   position: absolute;
   right: 0;
   display: flex;
@@ -27,6 +28,8 @@ html {
   display: none;
   order: 1;
   position: fixed; }
+  .menu-bar .profile__description {
+    display: none; }
 
 .card-list {
   display: none;
@@ -94,8 +97,8 @@ span.manage {
     color: #868686; }
   .section__title {
     font-weight: 700;
-    font-size: 18px;
-    padding-bottom: 15px; }
+    font-size: 20px;
+    padding: 20px 0; }
   .section__columns {
     display: flex;
     flex-direction: row;
@@ -121,7 +124,7 @@ span.manage {
     justify-content: flex-end; }
 
 .card-info {
-  font-size: 16px; }
+  font-size: 14px; }
   .card-info__content {
     line-height: 50px; }
     .card-info__content__icon {
@@ -150,6 +153,7 @@ span.manage {
     width: calc(100% - 150px); }
   .app .menu-bar {
     min-height: 100vh;
+    height: 650px;
     order: 1;
     width: 150px;
     background-color: #0a150f;
@@ -162,8 +166,46 @@ span.manage {
       padding: 10px 20px; }
       .app .menu-bar .icon-menu__active {
         background-color: #97f675; }
-    .app .menu-bar .icon-menu:hover {
-      background-color: #97f675; }
+      .app .menu-bar .icon-menu #home {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/home.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #accounts {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/layers.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #cards {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/credit-card.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #payments {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/triangle.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #team {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/star.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #settings {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/octagon.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #help {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/message-square.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #log-out {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/log-out.svg");
+        background-repeat: no-repeat; }
     .app .menu-bar__menu-up {
       display: flex;
       flex-direction: column;
@@ -253,14 +295,15 @@ span.manage {
     display: flex;
     flex-direction: column;
     width: 40%;
+    height: 100vh;
     border-right: 1px solid #99999970; }
     .app .card-list .header {
       justify-content: space-between;
-      margin: 0 30px;
+      margin: 0 50px;
       padding: 40px 0;
       width: calc(100% - 60px); }
     .app .card-list .card-tab {
-      padding: 15px 0 15px 30px;
+      padding: 15px 0 15px 50px;
       border-bottom: 1px solid #99999970;
       position: relative; }
       .app .card-list .card-tab--active {
@@ -379,7 +422,8 @@ span.manage {
       align-items: center;
       width: 140px;
       margin: 10px 0;
-      padding: 10px 20px; }
+      padding: 10px 20px;
+      cursor: pointer; }
       .app .menu-bar .icon-menu #home {
         width: 25px;
         height: 25px;
@@ -423,46 +467,13 @@ span.manage {
       .app .menu-bar .icon-menu__active {
         background-color: #97f675; }
         .app .menu-bar .icon-menu__active .desktop {
-          color: #1f332b; }
+          color: #0a150f; }
       .app .menu-bar .icon-menu:hover {
         transition: 0.5s;
         background-color: #97f675;
-        color: black; }
-        .app .menu-bar .icon-menu:hover #home {
-          width: 25px;
-          height: 25px;
-          background-image: url("/icon/home-h.svg");
-          background-repeat: no-repeat; }
-        .app .menu-bar .icon-menu:hover #accounts {
-          width: 25px;
-          height: 25px;
-          background-image: url("/icon/layers-h.svg");
-          background-repeat: no-repeat; }
-        .app .menu-bar .icon-menu:hover #payments {
-          width: 25px;
-          height: 25px;
-          background-image: url("/icon/triangle-h.svg");
-          background-repeat: no-repeat; }
-        .app .menu-bar .icon-menu:hover #team {
-          width: 25px;
-          height: 25px;
-          background-image: url("/icon/star-h.svg");
-          background-repeat: no-repeat; }
-        .app .menu-bar .icon-menu:hover #settings {
-          width: 25px;
-          height: 25px;
-          background-image: url("/icon/octagon-h.svg");
-          background-repeat: no-repeat; }
-        .app .menu-bar .icon-menu:hover #help {
-          width: 25px;
-          height: 25px;
-          background-image: url("/icon/message-square-h.svg");
-          background-repeat: no-repeat; }
-        .app .menu-bar .icon-menu:hover #log-out {
-          width: 25px;
-          height: 25px;
-          background-image: url("/icon/log-out-h.svg");
-          background-repeat: no-repeat; }
+        color: #0a150f; }
+        .app .menu-bar .icon-menu:hover * {
+          filter: brightness(0.2); }
     .app .menu-bar__menu-up {
       display: flex;
       flex-direction: column;
@@ -491,6 +502,7 @@ span.manage {
         .app .menu-bar__menu-down .profile img {
           border-radius: 50%; }
         .app .menu-bar__menu-down .profile__description {
+          display: inline-block;
           width: 100px;
           height: 100%;
           color: #ffffff;
@@ -503,7 +515,7 @@ span.manage {
             color: #868686;
             line-height: 25px; }
   .app .software-subscriptions {
-    padding: 30px 10px;
+    padding: 30px 50px;
     width: 60%; }
   .app .header__icon * {
     margin: 0 10px; }
@@ -529,6 +541,10 @@ span.manage {
       transform: translate(-50%, -50%); }
   .app .header__options {
     padding: 5px 10px; }
+  .app .section:nth-of-type(1) {
+    margin-top: 40px; }
+  .app .section:nth-of-type(2), .app .section:nth-of-type(3) {
+    padding-bottom: 30px; }
   .app .section--flex-row {
     display: flex;
     flex-direction: row;
@@ -587,5 +603,7 @@ span.manage {
 @media (min-width: 1200px) {
   .app .header__title {
     font-size: 28px; }
+  .app .card-info__content {
+    font-size: 18px; }
   .app .card-list .card-tab__card-pic {
     height: 80%; } }

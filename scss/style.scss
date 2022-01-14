@@ -62,6 +62,7 @@ html {
 }
 
 .main {
+  width: 100%;
   position: absolute;
   right: 0;
   display: flex;
@@ -83,6 +84,11 @@ html {
   display: none;
   order: 1;
   position: fixed;
+  .profile {
+    &__description {
+      display: none;
+    }
+  }
 }
 
 .card-list {
@@ -171,8 +177,8 @@ span.manage {
 
   &__title {
     font-weight: 700;
-    font-size: 18px;
-    padding-bottom: 15px;
+    font-size: 20px;
+    padding: 20px 0;
   }
 
   &__columns {
@@ -216,7 +222,7 @@ span.manage {
 }
 
 .card-info {
-  font-size: 16px;
+  font-size: 14px;
 
   &__content {
     line-height: 50px;
@@ -259,6 +265,7 @@ span.manage {
 
     .menu-bar {
       min-height: 100vh;
+      height: 650px;
       order: 1;
       width: 150px;
       background-color: $green;
@@ -274,12 +281,39 @@ span.manage {
         &__active {
           background-color: $ltgreen;
         }
-      }
 
-      .icon-menu:hover {
-        background-color: $ltgreen;
-      }
+        #home {
+          @include icon("/icon/home.svg");
+        }
 
+        #accounts {
+          @include icon("/icon/layers.svg");
+        }
+
+        #cards {
+          @include icon("/icon/credit-card.svg");
+        }
+
+        #payments {
+          @include icon("/icon/triangle.svg");
+        }
+
+        #team {
+          @include icon("/icon/star.svg");
+        }
+
+        #settings {
+          @include icon("/icon/octagon.svg");
+        }
+
+        #help {
+          @include icon("/icon/message-square.svg");
+        }
+
+        #log-out {
+          @include icon("/icon/log-out.svg");
+        }
+      }
       &__menu-up {
         display: flex;
         flex-direction: column;
@@ -361,8 +395,10 @@ span.manage {
 
       .recent-transactions,
       .issued-access {
-        .section__columns-element {
-          width: 33%;
+        .section {
+          &__columns-element {
+            width: 33%;
+          }
         }
       }
 
@@ -435,17 +471,18 @@ span.manage {
       display: flex;
       flex-direction: column;
       width: 40%;
+      height: 100vh;
       border-right: 1px solid $ltgray-line;
 
       .header {
         justify-content: space-between;
-        margin: 0 30px;
+        margin: 0 50px;
         padding: 40px 0;
         width: calc(100% - 60px);
       }
 
       .card-tab {
-        padding: 15px 0 15px 30px;
+        padding: 15px 0 15px 50px;
         border-bottom: 1px solid $ltgray-line;
         position: relative;
 
@@ -612,6 +649,7 @@ span.manage {
         width: 140px;
         margin: 10px 0;
         padding: 10px 20px;
+        cursor: pointer;
 
         #home {
           @include icon("/icon/home.svg");
@@ -648,45 +686,17 @@ span.manage {
         &__active {
           background-color: $ltgreen;
           .desktop {
-            color: $card-active-bg;
+            color: $green;
           }
         }
 
         &:hover {
           transition: 0.5s;
           background-color: $ltgreen;
-          color: black;
+          color: $green;
 
-          #home {
-            @include icon("/icon/home-h.svg");
-          }
-
-          #accounts {
-            @include icon("/icon/layers-h.svg");
-          }
-
-          // #cards {
-          //   @include icon("/icon/credit-card-h.svg");
-          // }
-
-          #payments {
-            @include icon("/icon/triangle-h.svg");
-          }
-
-          #team {
-            @include icon("/icon/star-h.svg");
-          }
-
-          #settings {
-            @include icon("/icon/octagon-h.svg");
-          }
-
-          #help {
-            @include icon("/icon/message-square-h.svg");
-          }
-
-          #log-out {
-            @include icon("/icon/log-out-h.svg");
+          * {
+            filter: brightness(0.2);
           }
         }
       }
@@ -729,6 +739,7 @@ span.manage {
           }
 
           &__description {
+            display: inline-block;
             width: 100px;
             height: 100%;
             color: $white;
@@ -750,8 +761,7 @@ span.manage {
     }
 
     .software-subscriptions {
-      padding: 30px 10px;
-      // margin: 0 auto;
+      padding: 30px 50px;
       width: 60%;
     }
 
@@ -795,6 +805,15 @@ span.manage {
     }
 
     .section {
+      &:nth-of-type(1) {
+        margin-top: 40px;
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        padding-bottom: 30px;
+      }
+
       &--flex-row {
         display: flex;
         flex-direction: row;
@@ -884,6 +903,12 @@ span.manage {
     .header {
       &__title {
         font-size: 28px;
+      }
+    }
+
+    .card-info {
+      &__content {
+        font-size: 18px;
       }
     }
 
