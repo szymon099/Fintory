@@ -83,8 +83,8 @@ span.manage {
     border: 1px solid #000000;
     cursor: pointer; }
     .header__options:hover {
-      transition: 2s;
-      background-color: #868686; }
+      transition: 0.5s;
+      background-color: #99999970; }
 
 .section {
   padding: 15px 0;
@@ -376,15 +376,93 @@ span.manage {
     .app .menu-bar .icon-menu {
       display: flex;
       flex-direction: row;
+      align-items: center;
       width: 140px;
       margin: 10px 0;
       padding: 10px 20px; }
+      .app .menu-bar .icon-menu #home {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/home.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #accounts {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/layers.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #cards {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/credit-card.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #payments {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/triangle.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #team {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/star.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #settings {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/octagon.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #help {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/message-square.svg");
+        background-repeat: no-repeat; }
+      .app .menu-bar .icon-menu #log-out {
+        width: 25px;
+        height: 25px;
+        background-image: url("/icon/log-out.svg");
+        background-repeat: no-repeat; }
       .app .menu-bar .icon-menu__active {
         background-color: #97f675; }
         .app .menu-bar .icon-menu__active .desktop {
           color: #1f332b; }
-    .app .menu-bar .icon-menu:hover {
-      background-color: #97f675; }
+      .app .menu-bar .icon-menu:hover {
+        transition: 0.5s;
+        background-color: #97f675;
+        color: black; }
+        .app .menu-bar .icon-menu:hover #home {
+          width: 25px;
+          height: 25px;
+          background-image: url("/icon/home-h.svg");
+          background-repeat: no-repeat; }
+        .app .menu-bar .icon-menu:hover #accounts {
+          width: 25px;
+          height: 25px;
+          background-image: url("/icon/layers-h.svg");
+          background-repeat: no-repeat; }
+        .app .menu-bar .icon-menu:hover #payments {
+          width: 25px;
+          height: 25px;
+          background-image: url("/icon/triangle-h.svg");
+          background-repeat: no-repeat; }
+        .app .menu-bar .icon-menu:hover #team {
+          width: 25px;
+          height: 25px;
+          background-image: url("/icon/star-h.svg");
+          background-repeat: no-repeat; }
+        .app .menu-bar .icon-menu:hover #settings {
+          width: 25px;
+          height: 25px;
+          background-image: url("/icon/octagon-h.svg");
+          background-repeat: no-repeat; }
+        .app .menu-bar .icon-menu:hover #help {
+          width: 25px;
+          height: 25px;
+          background-image: url("/icon/message-square-h.svg");
+          background-repeat: no-repeat; }
+        .app .menu-bar .icon-menu:hover #log-out {
+          width: 25px;
+          height: 25px;
+          background-image: url("/icon/log-out-h.svg");
+          background-repeat: no-repeat; }
     .app .menu-bar__menu-up {
       display: flex;
       flex-direction: column;
@@ -400,12 +478,11 @@ span.manage {
     .app .menu-bar__menu-down {
       display: flex;
       flex-direction: column;
-      align-items: center; }
+      align-items: center;
+      color: #b5b9b7; }
       .app .menu-bar__menu-down .menu {
         padding-bottom: 10px;
         border-bottom: 1px solid #99999970; }
-        .app .menu-bar__menu-down .menu .desktop {
-          color: #b5b9b7; }
       .app .menu-bar__menu-down .profile {
         padding: 30px 0;
         display: flex;
@@ -434,7 +511,7 @@ span.manage {
     display: none;
     width: 40px; }
   .app .header__title {
-    font-size: 28px;
+    font-size: 22px;
     width: auto; }
   .app .header__square {
     width: 40px;
@@ -508,5 +585,7 @@ span.manage {
       z-index: 1; } }
 
 @media (min-width: 1200px) {
+  .app .header__title {
+    font-size: 28px; }
   .app .card-list .card-tab__card-pic {
     height: 80%; } }

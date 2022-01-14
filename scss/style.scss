@@ -34,6 +34,19 @@ $arrow-circle: #eef1ed;
 $disable-text: #666e69;
 $disable-dot: #c8ccc9;
 
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin icon($url) {
+  width: 25px;
+  height: 25px;
+  background-image: url($url);
+  background-repeat: no-repeat;
+}
+
 html {
   font-family: "Open Sans", sans-serif;
 
@@ -141,8 +154,8 @@ span.manage {
     cursor: pointer;
 
     &:hover {
-      transition: 2s;
-      background-color: $ltgray-text;
+      transition: 0.5s;
+      background-color: $ltgray-line;
     }
   }
 }
@@ -546,9 +559,10 @@ span.manage {
           width: 100%;
           height: 50%;
           font-size: 18px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
+          @include flex-center();
 
           .master-card {
             margin-left: 5px;
@@ -594,9 +608,42 @@ span.manage {
       .icon-menu {
         display: flex;
         flex-direction: row;
+        align-items: center;
         width: 140px;
         margin: 10px 0;
         padding: 10px 20px;
+
+        #home {
+          @include icon("/icon/home.svg");
+        }
+
+        #accounts {
+          @include icon("/icon/layers.svg");
+        }
+
+        #cards {
+          @include icon("/icon/credit-card.svg");
+        }
+
+        #payments {
+          @include icon("/icon/triangle.svg");
+        }
+
+        #team {
+          @include icon("/icon/star.svg");
+        }
+
+        #settings {
+          @include icon("/icon/octagon.svg");
+        }
+
+        #help {
+          @include icon("/icon/message-square.svg");
+        }
+
+        #log-out {
+          @include icon("/icon/log-out.svg");
+        }
 
         &__active {
           background-color: $ltgreen;
@@ -604,10 +651,44 @@ span.manage {
             color: $card-active-bg;
           }
         }
-      }
 
-      .icon-menu:hover {
-        background-color: $ltgreen;
+        &:hover {
+          transition: 0.5s;
+          background-color: $ltgreen;
+          color: black;
+
+          #home {
+            @include icon("/icon/home-h.svg");
+          }
+
+          #accounts {
+            @include icon("/icon/layers-h.svg");
+          }
+
+          // #cards {
+          //   @include icon("/icon/credit-card-h.svg");
+          // }
+
+          #payments {
+            @include icon("/icon/triangle-h.svg");
+          }
+
+          #team {
+            @include icon("/icon/star-h.svg");
+          }
+
+          #settings {
+            @include icon("/icon/octagon-h.svg");
+          }
+
+          #help {
+            @include icon("/icon/message-square-h.svg");
+          }
+
+          #log-out {
+            @include icon("/icon/log-out-h.svg");
+          }
+        }
       }
 
       &__menu-up {
@@ -630,14 +711,11 @@ span.manage {
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: $gray-text;
 
         .menu {
           padding-bottom: 10px;
           border-bottom: 1px solid $ltgray-line;
-
-          .desktop {
-            color: $gray-text;
-          }
         }
 
         .profile {
@@ -690,7 +768,7 @@ span.manage {
       }
 
       &__title {
-        font-size: 28px;
+        font-size: 22px;
         width: auto;
       }
 
@@ -783,9 +861,10 @@ span.manage {
         }
 
         .arrow {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include flex-center();
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
           width: 100px;
           height: 100px;
           background-color: $arrow-circle;
@@ -802,6 +881,12 @@ span.manage {
 
 @media (min-width: 1200px) {
   .app {
+    .header {
+      &__title {
+        font-size: 28px;
+      }
+    }
+
     .card-list {
       .card-tab {
         &__card-pic {
